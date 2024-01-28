@@ -1,0 +1,26 @@
+module OpenDDSWIS{
+
+    enum UnitSymbol {
+        UnitSymbol_A,
+        UnitSymbol_B,
+        UnitSymbol_C
+    };
+
+    struct IdentifiedObject {
+	    string description;  
+	    string mRID;  
+    	string name;  
+	    string aliasName;  
+    };
+    
+    struct Switch1 {
+        IdentifiedObject idfO;
+        UnitSymbol US;
+    };
+
+    @topic
+    struct SwitchTopic {
+    	Switch1 s;
+    	@key long topicCount;
+    };
+};
